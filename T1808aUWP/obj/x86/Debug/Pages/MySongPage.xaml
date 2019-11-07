@@ -1,0 +1,59 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="T1808aUWP.Pages.MySongPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:T1808aUWP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:entity="using:T1808aUWP.Entity"
+    mc:Ignorable="d"
+    NavigationCacheMode="Enabled"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="https://thumbs.gfycat.com/LegitimateRedHarborporpoise-size_restricted.gif" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <ScrollViewer>
+            <ListView x:ConnectionId='10' x:Name="TopSongs"                                  >
+                <ListView.ItemTemplate>
+                    <DataTemplate x:Name="DoubleLineDataTemplate"                         >
+                        <StackPanel x:ConnectionId='12'                             Tag="{Binding}" Orientation="Horizontal" Height="64" >
+                            <Ellipse Height="48" Width="48" VerticalAlignment="Center">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="{Binding thumbnail}"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <StackPanel  Orientation="Vertical" VerticalAlignment="Center" Margin="12,0,0,0">
+                                <TextBlock x:ConnectionId='13'                      Style="{ThemeResource BaseTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" />
+                                <TextBlock x:ConnectionId='14'                        Style="{ThemeResource BodyTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollViewer>
+
+        <ProgressBar x:ConnectionId='2' VerticalAlignment="Bottom" Margin="200,0,150,85" x:Name="progressBar1" Value="0" Maximum="200" Height="10" Background="#7200E5D0" BorderBrush="Transparent" Foreground="#FF2B96EA"/>
+        <TextBlock x:ConnectionId='3'  x:Name="TimeStart" HorizontalAlignment="Left" Margin="200,0,0,60" Text="0:00" TextWrapping="Wrap" VerticalAlignment="Bottom" FocusVisualPrimaryBrush="White" Foreground="White"/>
+        <TextBlock x:ConnectionId='4' x:Name="TimeEnd" HorizontalAlignment="Left" Margin="1320,0,0,61" Text="0:00" TextWrapping="Wrap" VerticalAlignment="Bottom" Foreground="#FFF7F7F7">
+            <TextBlock.FocusVisualPrimaryBrush>
+                <AcrylicBrush/>
+            </TextBlock.FocusVisualPrimaryBrush>
+        </TextBlock>
+        <StackPanel VerticalAlignment="Bottom">
+            <MediaElement x:ConnectionId='5' x:Name="MediaPlayer"></MediaElement>
+            <CommandBar >
+                <AppBarButton x:ConnectionId='6' x:Name="PreviousButton" Label="Previous" Icon="Previous"                               ></AppBarButton>
+                <AppBarButton x:ConnectionId='7' x:Name="PlayButton" Label="Play" Icon="Play"                           ></AppBarButton>
+                <AppBarButton x:ConnectionId='8' x:Name="NextButton" Label="Next" Icon="Next"                           ></AppBarButton>
+                <CommandBar.Content>
+                    <TextBlock x:ConnectionId='9' x:Name="NowPlayingText" Text="Now playing..." Margin="12,14"/>
+                </CommandBar.Content>
+                
+            </CommandBar>
+
+        </StackPanel>
+    </Grid>
+</Page>
+

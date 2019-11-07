@@ -1,0 +1,126 @@
+﻿    <Page
+    x:Class="T1808aUWP.Pages.RegisterPage2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:T1808aUWP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="10"></Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+        <Style TargetType="StackPanel">
+            <Setter Property="Margin" Value="10" />
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="Margin" Value="10" />
+        </Style>
+        <Style TargetType="RadioButton">
+            <Setter Property="Margin" Value="10" />
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="Margin" Value="10" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10" />
+        </Style>
+    </Page.Resources>
+    <ScrollViewer>
+        <ScrollViewer.Content>
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center" Margin="50" FontSize="48">Register Form</TextBlock>
+                <Grid Margin="20" HorizontalAlignment="Center" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="Auto" MinWidth="300" />
+                        <ColumnDefinition Width="0*"/>
+                    </Grid.ColumnDefinitions>
+                    <PersonPicture x:ConnectionId='2'                       Grid.Row="0" RenderTransformOrigin="0.456,0.466" Grid.Column="0" Grid.ColumnSpan="2" Margin="260,0,262,0" />
+                    <Image x:ConnectionId='3' x:Name="Avatar" Grid.Row="0" Grid.Column="0"  Width="100"></Image>
+                        <TextBlock x:ConnectionId='4' x:Name="AvatarUrl" Visibility="Collapsed"></TextBlock>
+
+                    <TextBox x:ConnectionId='5' x:Name="FirstName" Grid.Row="1" Grid.Column="0" PlaceholderText="FirstName" Margin="10,10,10,10"/>
+                    <TextBlock x:ConnectionId='6' Grid.Row="2" Grid.Column="0" x:Name="FNameError" Visibility="Collapsed" Foreground="Red"></TextBlock>
+
+                    <TextBox x:ConnectionId='7' x:Name="LastName" Grid.Row="1" Grid.Column="1" PlaceholderText="LastName" Margin="10,10,9,10"></TextBox>
+                    <TextBlock x:ConnectionId='8' Grid.Row="2" Grid.Column="1" x:Name="LNameError" Visibility="Collapsed" Foreground="Red"></TextBlock>
+
+                    <TextBox x:ConnectionId='9' x:Name="Address" Grid.Row="3" Grid.Column="0" PlaceholderText="Address" Margin="10,10,10,10"/>
+                    <TextBlock x:ConnectionId='10' Grid.Row="4" Grid.Column="0" x:Name="AddressError" Visibility="Collapsed" Foreground="Red"></TextBlock>
+
+                    <TextBox x:ConnectionId='11' x:Name="Introduction" Grid.Row="3" Grid.Column="1" PlaceholderText="Introduction" Margin="10,10,9,10"/>
+                    <TextBlock x:ConnectionId='12' Grid.Row="4" Grid.Column="1" x:Name="IntroductionError" Visibility="Collapsed" Foreground="Red"></TextBlock>
+
+                    <TextBox x:ConnectionId='13' x:Name="Phone" Grid.Row="5" Grid.Column="0" PlaceholderText="Phone"></TextBox>
+                    <TextBlock x:ConnectionId='14' Grid.Row="6" Grid.Column="0" x:Name="PhoneError" Visibility="Collapsed" Foreground="Red"></TextBlock>
+
+                    <DatePicker x:ConnectionId='15' x:Name="Birthday"  Grid.Row="5" Grid.Column="1"/>
+                    <TextBlock x:ConnectionId='16' Grid.Row="6" Grid.Column="1" x:Name="BirthdayError" Visibility="Collapsed" Foreground="Red"></TextBlock>
+
+                    <TextBox x:ConnectionId='17' x:Name="Email" PlaceholderText="Email" Grid.Row="7" Grid.Column="0" Margin="10,10,10,10"/>
+                    <TextBlock x:ConnectionId='18' Grid.Row="8" Grid.Column="0" x:Name="EmailError" Visibility="Collapsed" Foreground="Red"></TextBlock>
+
+                    <PasswordBox x:ConnectionId='19' x:Name="Password" PlaceholderText="Password" Grid.Row="7" Grid.Column="1" Margin="10,10,10,10" ></PasswordBox>
+                    <TextBlock x:ConnectionId='20' Grid.Row="8" Grid.Column="1" x:Name="PwdError" Visibility="Collapsed" Foreground="Red"></TextBlock>
+
+                    <!--<TextBox x:Name="FirstName" Grid.Row="2" Grid.Column="0" PlaceholderText="FirstName" Margin="10,10,10,10"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" x:Name="FNameError" Visibility="Collapsed" Foreground="Red"></TextBlock>
+
+                    <TextBox x:Name="LastName" Grid.Row="2" Grid.Column="1" PlaceholderText="LastName" Margin="10,10,9,10"></TextBox>
+                    <TextBlock Grid.Row="1" Grid.Column="1" x:Name="LNameError" Visibility="Collapsed" Foreground="Red"></TextBlock>
+
+                    <TextBox x:Name="Address" Grid.Row="4" Grid.Column="0" PlaceholderText="Address" Margin="10,10,10,10"/>
+                    <TextBlock Grid.Row="3" Grid.Column="0" x:Name="AddressError" Visibility="Collapsed" Foreground="Red"></TextBlock>
+
+                    <TextBox x:Name="Introduction" Grid.Row="4" Grid.Column="1" PlaceholderText="Introduction" Margin="10,10,9,10"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1" x:Name="IntroductionError" Visibility="Collapsed" Foreground="Red"></TextBlock>
+
+                    <TextBox x:Name="Phone" Grid.Row="6" Grid.Column="0" PlaceholderText="Phone"></TextBox>
+                    <TextBlock Grid.Row="5" Grid.Column="0" x:Name="PhoneError" Visibility="Collapsed" Foreground="Red"></TextBlock>
+
+                    <DatePicker x:Name="Birthday"  Grid.Row="6" Grid.Column="1"/>
+                    <TextBlock Grid.Row="5" Grid.Column="1" x:Name="BirthdayError" Visibility="Collapsed" Foreground="Red"></TextBlock>
+
+                    <TextBox x:Name="Email" PlaceholderText="Email" Grid.Row="8" Grid.Column="0" Margin="10,10,10,10"/>
+                    <TextBlock Grid.Row="7" Grid.Column="0" x:Name="EmailError" Visibility="Collapsed" Foreground="Red"></TextBlock>
+
+                    <PasswordBox x:Name="Password" PlaceholderText="Password" Grid.Row="8" Grid.Column="1" Margin="10,10,10,10" ></PasswordBox>
+                    <TextBlock Grid.Row="7" Grid.Column="1" x:Name="PwdError" Visibility="Collapsed" Foreground="Red"></TextBlock>-->
+
+                    <StackPanel Grid.Row="9" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="10,10,10,10">
+                        <RadioButton x:ConnectionId='23' Content="Male" Tag="Male"  IsChecked="True"                             ></RadioButton>
+                        <RadioButton x:ConnectionId='24' Content="Female" Tag="Female"                             ></RadioButton>
+                        <RadioButton x:ConnectionId='25' Content="Other" Tag="Other"                             />
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Row="10"  Orientation="Horizontal" Margin="223,5,185,15" Grid.ColumnSpan="2">
+                        <Button x:ConnectionId='21'                           >Submit</Button>
+                        <Button >Reset</Button>
+                        <HyperlinkButton x:ConnectionId='22'                            >Or Login</HyperlinkButton>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer.Content>
+    </ScrollViewer>
+</Page>
+
